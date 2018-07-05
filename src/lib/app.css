@@ -1,0 +1,46 @@
+a {
+  cursor: pointer;
+}
+
+.hide {
+  display: none !important;
+}
+
+.modal-dialog.modal-dialog-center {
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  vertical-align: middle;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  border: none;
+  box-shadow: 0 10px 15px 0 rgba(34,36,38,.15);
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-backdrop.show {
+  opacity: 0.35;
+}
+
+.box-shadow {
+  box-shadow: 0 10px 15px 0 rgba(34,36,38,.1) !important;
+}
+
+.card {
+  box-shadow: 0 5px 10px 0 rgba(34,36,38,.08) !important;
+  border: none !important;
+}
+
+.text-muted, .dropdown-item.disabled, .dropdown-item:disabled {
+  color: #ccc !important;
+}

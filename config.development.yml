@@ -1,0 +1,4 @@
+# Web Server
+DEFAULT_PORT: 3000
+HOST_NAME: //localhost:3000
+API_URL: https://dev-api.akohub.com/v2.2
