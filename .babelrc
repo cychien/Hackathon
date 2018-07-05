@@ -1,0 +1,17 @@
+{
+  "presets": ["env", "stage-0", "react"],
+  "plugins": [
+    "transform-decorators-legacy",
+    ["react-css-modules", 
+      { 
+        "context": "./src",
+        "filetypes": {
+          ".scss": { "syntax": "postcss-scss" }
+        },
+        "generateScopedName": "[name]__[local]__[hash:base64:5]",
+        "webpackHotModuleReloading": true,
+        "removeImport": false
+      }
+    ]
+  ]
+}
