@@ -59,7 +59,7 @@ module.exports = {
   },
   devServer: {
     bonjour: true,
-    port: 3000,
+    port: 8700,
     contentBase: './dist',
     publicPath: '/',
     headers: {

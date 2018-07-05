@@ -14,8 +14,6 @@ const configFile = (process.env.NODE_ENV === 'development')
     : path.resolve(__dirname, 'config.production.yml')
 const appConfig = yaml.safeLoad(fs.readFileSync(configFile, 'utf8'))
 
-const assetsPath = path.join(__dirname, 'dist/assets/')
-
 module.exports = {
   mode: 'production',
   context: path.resolve(__dirname, './src'),

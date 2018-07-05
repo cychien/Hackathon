@@ -1,4 +1,4 @@
 # Web Server
-DEFAULT_PORT: 3000
-HOST_NAME: //localhost:3000
+DEFAULT_PORT: 8700
+HOST_NAME: //admin.akohub.com
 API_URL: https://api.akohub.com/v2.2
