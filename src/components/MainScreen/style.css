@@ -1,0 +1,12 @@
+.datePicker input {
+  padding-top: 9px;
+  padding-bottom: 7px;
+}
+
+.datePicker > div > div > div {
+  border-radius: 5px;
+}
+
+.dateLabel {
+  line-height: 40px
+}

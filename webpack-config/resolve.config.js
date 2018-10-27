@@ -10,7 +10,7 @@ module.exports = {
   alias: {
     bootstrapCSS: 'bootstrap/dist/css/bootstrap.min.css',
     fontAwesome: '@fortawesome/fontawesome-free/js/all.js',
-    reactSelectCSS: 'react-select/dist/react-select.css',
+    reactDatesCSS: 'react-dates/lib/css/_datepicker.css',
     appCSS: path.resolve(srcPath, 'lib/app.css')
   }
 }

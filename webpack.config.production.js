@@ -21,8 +21,8 @@ module.exports = {
     app: './client/index.js',
     vendor: [
       'bootstrapCSS',
+      'reactDatesCSS',
       'fontAwesome',
-      'reactSelectCSS',
       'appCSS'
     ]
   },
