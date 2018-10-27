@@ -1,7 +1,12 @@
 .device {
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 2px solid grey;
   cursor: pointer;
+}
+
+.device:hover {
+  background-color: black;
+  border-color: black;
 }
