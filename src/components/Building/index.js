@@ -4,13 +4,13 @@ import FloorWrap from '../FloorWrap';
 import position from 'constants/position';
 import './style.css';
 
-const Building = ({ title, disable }) => {
+const Building = ({ title, disable, floorActive }) => {
   const buildingClass = cx('building', { 'building-disable': disable })
   return (
     <div className="d-flex flex-column align-items-center">
       <div styleName={buildingClass}>
         {
-          disable ? '' : <FloorWrap position={position} />
+          disable ? '' : <FloorWrap position={position} floorActive={floorActive} />
         }
       </div>
       <h6 className="p-3">{title}</h6>

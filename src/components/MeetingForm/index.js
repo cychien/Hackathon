@@ -1,17 +1,18 @@
 import React from 'react'
+import './style.css'
 
-const Meeting = () => {
+const MeetingForm = () => {
   return (
     <form className="form d-flex align-items-end">
-      <div className="form-group px-3 m-0">
+      <div className="form-group pr-5 m-0" styleName="form-flex">
         <label for="meetingRoom">欲借用空間</label>
         <input type="text" className="form-control" id="meetingRoom" placeholder="101" />
       </div>
-      <div className="form-group px-3 m-0">
+      <div className="form-group pr-5 m-0" styleName="form-flex">
         <label for="meetingTime">使用時間</label>
         <input type="password" className="form-control" id="meetingTime" placeholder="Password" />
       </div>
-      <div className="form-group px-3 m-0">
+      <div className="form-group pr-5 m-0" styleName="form-flex">
         <label for="meetingPeople">使用人數</label>
         <input type="number" className="form-control" id="meetingPeople" placeholder="6" min="1" />
       </div>
@@ -22,4 +23,4 @@ const Meeting = () => {
   )
 }
 
-export default Meeting
+export default MeetingForm

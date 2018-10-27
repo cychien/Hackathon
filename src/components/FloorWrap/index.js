@@ -2,7 +2,7 @@ import React from 'react'
 import Floor from '../Floor';
 import './style.css'
 
-const FloorWrap = ({ position }) => {
+const FloorWrap = ({ position, floorActive = false }) => {
   return (
     <div
       className="d-flex flex-column justify-content-between"
@@ -11,7 +11,7 @@ const FloorWrap = ({ position }) => {
         Object.values(position)
           .reverse()
           .map(({ floor, roomName, devices }, i) => 
-            <Floor key={i} floor={floor} roomName={roomName} devices={devices} />)
+            <Floor key={i} floor={floor} roomName={roomName} devices={devices} active={floorActive} />)
       }
     </div>
   )
