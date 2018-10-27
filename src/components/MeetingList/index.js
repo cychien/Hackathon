@@ -27,10 +27,10 @@ const MeetingList = () => {
     <table className="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">借用空間</th>
-          <th scope="col">使用時間</th>
-          <th scope="col">使用人數</th>
+          <th className="text-center">#</th>
+          <th className="text-center">借用空間</th>
+          <th className="text-center">使用時間</th>
+          <th className="text-center">使用人數</th>
         </tr>
       </thead>
       <tbody>

@@ -118,9 +118,6 @@ const MainScreen = ({selectedTime, switchSelectedTime}) => {
                 </label>
               </div>
             </div>
-            <div className='col-8'>
-              123
-            </div>
           </div>
         </div>
         

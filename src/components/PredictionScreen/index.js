@@ -1,9 +1,10 @@
 import React from 'react'
+import BuildingWrap from 'components/BuildingWrap';
 
 const PredictionScreen = () => {
   return (
-    <div>
-      Code here
+    <div className="container">
+      <BuildingWrap />
     </div>
   )
 }
