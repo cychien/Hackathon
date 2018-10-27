@@ -2,7 +2,7 @@ import React from 'react'
 import Floor from '../Floor';
 import './style.css'
 
-const FloorWrap = ({ position, floorActive = false }) => {
+const FloorWrap = ({ position, floorActive }) => {
   return (
     <div
       className="d-flex flex-column justify-content-between"
