@@ -9,7 +9,7 @@ import * as mainActions from 'actions/main'
 
 class Floor extends Component {
   render () {
-    const { floor, roomName, devices, active = false, mainActions, main } = this.props
+    const { floor, roomName, devices, active, mainActions, main } = this.props
     const FloorClass = cx('floor', { 'floor-active': active })
     return (
       <div
@@ -20,7 +20,14 @@ class Floor extends Component {
           {
             Object.values(devices)
               .map(({ id, deviceName, did }, i) =>
-                <Device key={i} id={id} deviceName={deviceName} did={did} selectArea={mainActions.selectArea} areaId={main.areaId}/>)
+                <Device 
+                  key={i} 
+                  id={id} 
+                  deviceName={deviceName} 
+                  did={did} 
+                  selectArea={mainActions.selectArea} areaId={main.areaId}
+                  active={active}
+                />)
           }
         </div>
       </div>

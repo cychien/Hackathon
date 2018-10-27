@@ -4,7 +4,7 @@ import FloorWrap from '../FloorWrap';
 import position from 'constants/position';
 import './style.css';
 
-const Building = ({ title, disable, floorActive }) => {
+const Building = ({ title, disable, floorActive = false }) => {
   const buildingClass = cx('building', { 'building-disable': disable })
   return (
     <div className="d-flex flex-column align-items-center">
