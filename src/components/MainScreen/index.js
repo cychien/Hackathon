@@ -82,6 +82,9 @@ const MainScreen = ({selectedTime, switchSelectedTime}) => {
               </div>
             </div>
           </div>
+          <div className='row'>
+            <Building />
+          </div>
         </div>
         
         {/* Dashboard */}
