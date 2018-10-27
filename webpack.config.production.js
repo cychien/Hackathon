@@ -22,7 +22,7 @@ module.exports = {
     vendor: [
       'bootstrapCSS',
       'reactDatesCSS',
-      'reactSelectCSS',
+      //'reactSelectCSS',
       'fontAwesome',
       'appCSS'
     ]

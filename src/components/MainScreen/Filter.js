@@ -4,7 +4,7 @@ import { SingleDatePicker } from 'react-dates'
 import Building from 'components/Building'
 import './style.css'
 
-const Filter = ({ selectedTime, switchSelectedTime }) => {
+const Filter = ({ selectedTime, switchSelectedTime, mainActions, main, focus, setFocus }) => {
   return (
     <div>
       <div className="mt-3" styleName="filter-items">
@@ -33,11 +33,21 @@ const Filter = ({ selectedTime, switchSelectedTime }) => {
         <div styleName='dateLabel'>Start Date</div>
         <div styleName='datePicker'>
           <SingleDatePicker
-            date={moment()} // momentPropTypes.momentObj or null
-            //onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
-            //focused={this.state.focused} // PropTypes.bool
-            //onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
-            id="your_unique_id" // PropTypes.string.isRequired,
+            date={moment(main.startTime)} // momentPropTypes.momentObj or null
+            onDateChange={date => {
+              mainActions.setStartTime(date.toISOString())
+              setFocus('endTime')
+            }} // PropTypes.func.isRequired
+            focused={focus === 'startTime'} // PropTypes.bool
+            onFocusChange={() => {
+              if (focus === 'startTime') setFocus('')
+              else setFocus('startTime')
+            }} // PropTypes.func.isRequired
+            id="startTime" // PropTypes.string.isRequired,
+            isOutsideRange={day => {
+              return !day.isSameOrBefore(moment(main.endTime))
+            }}
+            disabled={main.queryWay === 'live'}
           />
         </div>
       </div>
@@ -45,11 +55,18 @@ const Filter = ({ selectedTime, switchSelectedTime }) => {
         <div styleName='dateLabel'>End Date</div>
         <div styleName='datePicker'>
           <SingleDatePicker
-            date={moment()} // momentPropTypes.momentObj or null
-            //onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
-            //focused={this.state.focused} // PropTypes.bool
-            //onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
-            id="your_unique_id" // PropTypes.string.isRequired,
+            date={moment(main.endTime)} // momentPropTypes.momentObj or null
+            onDateChange={date => mainActions.setEndTime(date.toISOString())} // PropTypes.func.isRequired
+            focused={focus === 'endTime'} // PropTypes.bool
+            onFocusChange={() => {
+              if (focus === 'endTime') setFocus('')
+              else setFocus('endTime')
+            }} // PropTypes.func.isRequired
+            id="endTime" // PropTypes.string.isRequired,
+            isOutsideRange={day => {
+              return !day.isSameOrAfter(moment(main.startTime))
+            }}
+            disabled={main.queryWay === 'live'}
           />
         </div>
       </div>

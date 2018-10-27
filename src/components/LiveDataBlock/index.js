@@ -1,8 +1,9 @@
 import React from 'react'
 import Paper from 'components/Paper'
+import Loading from 'components/Loading'
 import './style.css'
 
-const LiveDataBlock = ({ title, data, signal, icon, color, iconStyle }) => {
+const LiveDataBlock = ({ title, data, signal, icon, color, iconStyle, isLoading }) => {
   return (
     <Paper>
       <div className="d-flex align-items-center">
@@ -14,7 +15,9 @@ const LiveDataBlock = ({ title, data, signal, icon, color, iconStyle }) => {
             <span className='mr-2'>{title}</span>
             <span className='rounded-circle' styleName='signal' />
           </div>
-          <div styleName="data">{data}</div>
+          {
+            data !== '--' && <div styleName="data">{data}</div>
+          }
         </div>
       </div>
     </Paper>
