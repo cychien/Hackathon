@@ -7,15 +7,32 @@ import './style.css'
 
 import * as usersActions from 'actions/users'
 
-import MainScreen from 'components/MainScreen';
 import Loading from 'components/Loading'
 
 import { DEFAULT_PORT } from 'config'
 
 class Home extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedTime: 'live'
+    }
+  }
+
+  switchSelectedTime = (selectedTime) => {
+    this.setState({
+      selectedTime
+    })
+  }
+
   render () {
+    const { selectedTime } = this.state
+
     return (
-      <MainScreen />
+      <MainScreen 
+        selectedTime={selectedTime} 
+        switchSelectedTime={this.switchSelectedTime}
+      />
     )
   }
 }

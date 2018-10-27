@@ -44,3 +44,7 @@ a {
 .text-muted, .dropdown-item.disabled, .dropdown-item:disabled {
   color: #ccc !important;
 }
+
+label {
+  font-size: 1.2em;
+}

@@ -11,7 +11,7 @@ const Header = ({ text }) => (
     <div className='navbar-nav-scroll'>
       <ul className='navbar-nav bd-navbar-nav flex-row'>
         <li className='nav-item'>
-          <Link className='nav-link' to='/dashboard'>Dashboard</Link>
+          <Link className='nav-link' to='/prediction'>Prediction</Link>
         </li>
       </ul>
     </div>

@@ -10,6 +10,7 @@ module.exports = {
   alias: {
     bootstrapCSS: 'bootstrap/dist/css/bootstrap.min.css',
     fontAwesome: '@fortawesome/fontawesome-free/js/all.js',
+    reactSelectCSS: 'react-select/dist/react-select.css',
     appCSS: path.resolve(srcPath, 'lib/app.css')
   }
 }
