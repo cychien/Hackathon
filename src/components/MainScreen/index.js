@@ -1,6 +1,5 @@
 import React from 'react'
 import LiveDataBlock from 'components/LiveDataBlock'
-import Building from 'components/Building'
 import Paper from 'components/Paper'
 import { Line } from 'react-chartjs-2'
 import cx from 'classnames'
@@ -180,10 +179,6 @@ const MainScreen = ({selectedTime, switchSelectedTime}) => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div>
-        <Building />
       </div>
     </div>
   )

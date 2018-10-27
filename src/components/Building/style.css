@@ -1,46 +1,10 @@
-:root {
-  --building-padding-top: 77px;
-  --pmlevel1: #D9EAC7;
-  --pmlevel2: #A8D398;
-  --pmlevel3: #EBF7F5;
-  --pmlevel4: #FEF301;
-  --pmlevel5: #F7AB05;
-  --pmlevel6: #EF6D01;
-  --pmlevel7: #F6B3C5;
-  --pmlevel8: #EE6D82;
-  --pmlevel9: #E70458;
-  --pmlevel10: #E70012;
-}
-
-.building-bg {
+.building {
   min-width: 244px;
   min-height: 512px;
   background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../../static/images/building.png');
+  position: relative;
 }
 
 .building-disable {
   opacity: 0.2;
-}
-
-.floor-wrap {
-  margin-top: var(--building-padding-top);
-  height: calc(100% - var(--building-padding-top));
-}
-
-.floor {
-  padding: 8px;
-  border-bottom: 2px solid grey dashed;
-  flex: 1;
-}
-
-.floor:last-child {
-  border: none;
-}
-
-.device {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid grey;
-  cursor: pointer;
 }
