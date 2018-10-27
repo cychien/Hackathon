@@ -1,6 +1,6 @@
 import React from 'react'
 import BuildingWrap from 'components/BuildingWrap';
-import Schedule from 'components/PredictionScreen/Schedule'
+import Schedule from 'containers/Schedule';
 import cx from 'classnames'
 
 const PredictionScreen = ({type, switchType}) => {

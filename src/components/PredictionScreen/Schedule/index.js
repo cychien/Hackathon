@@ -2,32 +2,43 @@ import React, { PureComponent } from 'react'
 import Paper from 'components/Paper'
 import Select from 'react-select'
 import position from 'constants/position';
+import { initState } from 'reducers/schedule';
 
 class Schedule extends PureComponent {
   constructor(props) {
     super(props)
 
-    this.state = {
-      date: "",
-      time: ""
-    }
+    this.state = initState[0]
     this.handleChange = this.handleChange.bind(this)
+    this.handleSelect = this.handleSelect.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
-    this.setState({[e.target.type]: e.target.value})
+    if (e.target.type === 'number') {
+      this.setState({ people: e.target.value })
+    } else {
+      this.setState({ [e.target.type]: e.target.value })
+    }
+  }
+
+  handleSelect({ value }) {
+    this.setState({ room: value })
   }
 
   handleSubmit(e) {
+    const { scheduleActions } = this.props
     e.preventDefault();
-    console.log(this.state);
+    scheduleActions.postForm(this.state)
   }
 
   render() {
     const roomOptions =
       Object.values(position)
         .map((({ roomName }) => ({ value: roomName, label: roomName })))
+    const { schedule } = this.props
+    const { room, people, date, time } = this.state
+    const disabled = room && people && date && time
     return (
       <Paper>
         <form onSubmit={this.handleSubmit}>
@@ -38,13 +49,18 @@ class Schedule extends PureComponent {
               options={roomOptions}
               simpleValue
               clearable={false}
-            //value={text}
-            //onChange={e => { textChangeHandler(e) }}
+              onChange={this.handleSelect}
             />
           </div>
           <div className="form-group">
             <label>People</label>
-            <input type="number" className="form-control" placeholder="6" min="1" />
+            <input
+              type="number"
+              className="form-control"
+              placeholder="6"
+              min="1"
+              onChange={this.handleChange}
+            />
           </div>
           <div className="form-group">
             <label>Time</label>
@@ -61,7 +77,7 @@ class Schedule extends PureComponent {
               onChange={this.handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary mb-3">Submit</button>
+          <button type="submit" className="btn btn-primary mb-3" disabled={!disabled}>Submit</button>
         </form>
         <div className="row">
           <table className="table table-sm table-striped">
@@ -73,16 +89,18 @@ class Schedule extends PureComponent {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td align="center" className="align-middle">808</td>
-                <td align="center" className="align-middle">28</td>
-                <td align="center">2018-10-27 23:44:07</td>
-              </tr>
-              <tr>
-                <td align="center" className="align-middle">808</td>
-                <td align="center" className="align-middle">28</td>
-                <td align="center">2018-10-27 23:44:07</td>
-              </tr>
+              {
+                schedule.map(({ room, people, date, time }, i) => {
+                  if (!room || !people || !date || !time) return
+                  return (
+                    <tr key={i}>
+                      <td align="center" className="align-middle">{room}</td>
+                      <td align="center" className="align-middle">{people}</td>
+                      <td align="center">{date} {time}</td>
+                    </tr>
+                  )
+                })
+              }
             </tbody>
           </table>
         </div>
