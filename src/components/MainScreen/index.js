@@ -1,5 +1,6 @@
 import React from 'react'
 import LiveDataBlock from 'components/LiveDataBlock'
+import Building from 'components/Building'
 
 const MainScreen = () => {
   return (
@@ -51,6 +52,10 @@ const MainScreen = () => {
             iconStyle={{left: '25%', top: '30%', fontSize: '20px'}}
           />
         </div>
+      </div>
+
+      <div>
+        <Building />
       </div>
     </div>
   )
