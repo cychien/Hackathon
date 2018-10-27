@@ -2,25 +2,23 @@ import React from 'react';
 import MeetingForm from 'components/MeetingForm';
 import MeetingList from 'components/MeetingList';
 import Building from 'components/Building';
+import Paper from 'components/Paper'
 
-function BuildingWrap() {
+function BuildingWrap({type}) {
   return (
-    <div className="my-5">
-      <h3 className="pb-3">各樓層空氣狀況</h3>
-      <div className="row">
-        <div className="col d-flex justify-content-center">
-          <Building title="現在" />
-        </div>
-        <div className="col d-flex justify-content-center">
-          <Building title="5分鐘後" />
-        </div>
-        <div className="col d-flex justify-content-center">
-          <Building title="開會" disable />
+    <Paper>
+      <div>
+        <label>各樓層空氣狀況</label>
+        <div className="row">
+          <div className="col justify-content-center">
+            <Building title="Now" />
+          </div>
+          <div className="col justify-content-center">
+            <Building title={type === 'normal' ? '5 minutes later' : 'Conference'} />
+          </div>
         </div>
       </div>
-      <MeetingList />
-      <MeetingForm />
-    </div>
+    </Paper>
   )
 }
 

@@ -11,6 +11,7 @@ module.exports = {
     bootstrapCSS: 'bootstrap/dist/css/bootstrap.min.css',
     fontAwesome: '@fortawesome/fontawesome-free/js/all.js',
     reactDatesCSS: 'react-dates/lib/css/_datepicker.css',
+    reactSelectCSS: 'react-select/dist/react-select.css',
     appCSS: path.resolve(srcPath, 'lib/app.css')
   }
 }
