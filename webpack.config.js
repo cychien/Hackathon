@@ -19,7 +19,7 @@ module.exports = {
       'bootstrapCSS',
       'fontAwesome',
       'reactDatesCSS',
-      'reactSelectCSS',
+      //'reactSelectCSS',
       'appCSS'
     ]
   },

@@ -15,39 +15,83 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedTime: 'live'
+      focus: ''
     }
+  }
+
+  setFocus = (focus) => {
+    this.setState({
+      focus
+    })
   }
 
   componentDidMount () {
     const {mainActions, main} = this.props
-    this.timer = setInterval(
-      () => {
-        mainActions.getData(main.areaId)
-      },
-      10000
-    );
+    if (main.queryWay === 'live') {
+      mainActions.getData(main.areaId)
+      this.timer = setInterval(
+        () => {
+          mainActions.getData(main.areaId)
+        },
+        3000
+      )
+    } else {
+      mainActions.getPeriodData(main.areaId, main.startTime, main.endTime)
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.main.areaId !== this.props.main.areaId) { 
+      this.timer && clearInterval(this.timer);
+      if (nextProps.main.queryWay === 'live') {
+        nextProps.mainActions.getData(nextProps.main.areaId)
+        this.timer = setInterval(
+          () => {
+            nextProps.mainActions.getData(nextProps.main.areaId)
+          },
+          3000
+        )
+      } else {
+        nextProps.mainActions.getPeriodData(nextProps.main.areaId, nextProps.main.startTime, nextProps.main.endTime)
+      }
+    }
+    if (nextProps.main.queryWay !== this.props.main.queryWay) {
+      this.timer && clearInterval(this.timer);
+      if (nextProps.main.queryWay === 'live') {
+        nextProps.mainActions.getData(nextProps.main.areaId)
+        this.timer = setInterval(
+          () => {
+            nextProps.mainActions.getData(nextProps.main.areaId)
+          },
+          3000
+        )
+      } else {
+        nextProps.mainActions.getPeriodData(nextProps.main.areaId, nextProps.main.startTime, nextProps.main.endTime)
+      }
+    }
+    if ((nextProps.main.startTime !== this.props.main.startTime) || (nextProps.main.endTime !== this.props.main.endTime)) {
+      this.timer && clearInterval(this.timer);
+      nextProps.mainActions.getPeriodData(nextProps.main.areaId, nextProps.main.startTime, nextProps.main.endTime)
+    }
   }
 
   componentWillUnmount () {
     this.timer && clearInterval(this.timer);
   }
 
-  switchSelectedTime = (selectedTime) => {
-    this.setState({
-      selectedTime
-    })
-  }
-
   render () {
-    const { selectedTime } = this.state
+    const {focus} = this.state
     const {main, mainActions} = this.props
+    const {queryWay} = main
 
     return (
       <MainScreen
         main={main}
-        selectedTime={selectedTime} 
-        switchSelectedTime={this.switchSelectedTime}
+        mainActions={mainActions}
+        selectedTime={queryWay} 
+        switchQueryWay={mainActions.switchQueryWay}
+        focus={focus}
+        setFocus={this.setFocus}
       />
     )
   }
