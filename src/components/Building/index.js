@@ -1,20 +1,21 @@
-import React from 'react';
-import BuildingBg from './BuildingBg';
+import React from 'react'
+import cx from 'classnames';
+import FloorWrap from '../FloorWrap';
+import position from 'constants/position';
+import './style.css';
 
-function Building() {
+const Building = ({ title, disable }) => {
+  const buildingClass = cx('building', { 'building-disable': disable })
   return (
-    <div className="row">
-      <div className="col d-flex justify-content-center">
-        <BuildingBg />
+    <div className="d-flex flex-column align-items-center">
+      <div styleName={buildingClass}>
+        {
+          disable ? '' : <FloorWrap position={position} />
+        }
       </div>
-      <div className="col d-flex justify-content-center">
-        <BuildingBg />
-      </div>
-      <div className="col d-flex justify-content-center">
-        <BuildingBg disable />
-      </div>
+      <h6 className="p-3">{title}</h6>
     </div>
   )
 }
 
-export default Building;
+export default Building

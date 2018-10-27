@@ -1,6 +1,6 @@
 import React from 'react'
 import LiveDataBlock from 'components/LiveDataBlock'
-import Building from 'components/Building'
+import BuildingWrap from 'components/BuildingWrap'
 
 const MainScreen = () => {
   return (
@@ -55,7 +55,7 @@ const MainScreen = () => {
       </div>
 
       <div>
-        <Building />
+        <BuildingWrap />
       </div>
     </div>
   )

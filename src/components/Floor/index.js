@@ -1,11 +1,13 @@
 import React from 'react'
-import Device from './Device';
+import cx from 'classnames';
+import Device from '../Device/Device';
 import './style.css'
 
-const Floor = ({ floor, roomName, devices }) => {
+const Floor = ({ floor, roomName, devices, active = false }) => {
+  const FloorClass = cx('floor', { 'floor-active': active })
   return (
     <div
-      styleName="floor"
+      styleName={FloorClass}
     >
       <p className="font-weight-bold">{roomName}</p>
       <div className="d-flex justify-content-around">

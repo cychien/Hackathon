@@ -1,0 +1,10 @@
+:root {
+  --building-padding-top: 77px;
+}
+
+.floor-wrap {
+  position: absolute;
+  top: var(--building-padding-top);
+  width: 100%;
+  height: calc(100% - var(--building-padding-top));
+}

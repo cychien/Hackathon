@@ -7,7 +7,6 @@ import './style.css'
 
 import * as usersActions from 'actions/users'
 
-import MainScreen from 'components/MainScreen';
 import Loading from 'components/Loading'
 
 import { DEFAULT_PORT } from 'config'

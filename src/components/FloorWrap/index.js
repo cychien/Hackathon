@@ -1,5 +1,5 @@
 import React from 'react'
-import Floor from './Floor';
+import Floor from '../Floor';
 import './style.css'
 
 const FloorWrap = ({ position }) => {
