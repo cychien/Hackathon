@@ -1,6 +1,7 @@
 import React from 'react';
 import Paper from 'components/Paper'
-import Meeting from 'components/Meeting';
+import MeetingForm from 'components/MeetingForm';
+import MeetingList from 'components/MeetingList';
 import Building from 'components/Building';
 
 function BuildingWrap() {
@@ -18,7 +19,8 @@ function BuildingWrap() {
           <Building title="開會" disable />
         </div>
       </div>
-      <Meeting />
+      <MeetingList />
+      <MeetingForm />
     </Paper>
   )
 }
