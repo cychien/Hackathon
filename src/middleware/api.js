@@ -39,10 +39,10 @@ export default store => next => action => {
   if (!action[CALL_API]) return next(action)
 
   const callAPI = action[CALL_API]
-  const { _pointer, method, headers, endpoint, body, upload, types, shouldNeedAuth } = callAPI
+  const { _pointer, method, headers, endpoint, body, upload, types, hasAuth } = callAPI
   const [requestType, receiveType, failureType] = types
   const { dispatch, getState } = store
-  const accessToken = getState().user.accessToken
+  const accessToken = 'FPzUKflQ83TkNLHf'
 
   dispatch({ type: requestType, payload: body, _pointer })
 
@@ -78,10 +78,10 @@ export default store => next => action => {
     }
   }
 
-  if (shouldNeedAuth && accessToken) {
+  if (hasAuth && accessToken) {
     options = { ...options,
       headers: { ...options.headers,
-        Authorization: `Bearer ${accessToken}`
+        AK: `${accessToken}`
       }
     }
   }
