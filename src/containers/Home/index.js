@@ -4,13 +4,18 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import './style.css'
 
-import * as userActions from 'actions/user'
+import * as usersActions from 'actions/users'
 
 import Loading from 'components/Loading'
 
 import { DEFAULT_PORT } from 'config'
 
 class Home extends Component {
+  componentWillMount () {
+    const {usersActions} = this.props
+    usersActions.getUsers()
+  }
+
   render () {
     return (
       <div className='container'>
@@ -28,13 +33,13 @@ class Home extends Component {
 
 function mapStateToProps (state) {
   return {
-    user: state.user
+    users: state.users
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    userActions: bindActionCreators(userActions, dispatch)
+    usersActions: bindActionCreators(usersActions, dispatch)
   }
 }
 

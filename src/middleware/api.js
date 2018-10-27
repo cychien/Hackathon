@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import humps from 'humps'
-import { unauthorized } from 'actions/user'
+import { unauthorized } from 'actions/users'
 
 import { API_URL } from 'config'
 

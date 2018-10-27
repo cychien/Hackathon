@@ -58,7 +58,7 @@ module.exports = {
     }
   },
   devServer: {
-    bonjour: true,
+    bonjour: false,
     port: 8700,
     contentBase: './dist',
     publicPath: '/',

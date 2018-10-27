@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import * as userActions from 'actions/user'
+import * as userActions from 'actions/users'
 
 class Dashboard extends Component {
   render () {

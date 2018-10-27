@@ -7,13 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run client",
     "client": "NODE_ENV=development webpack-dev-server --display-error-details --history-api-fallback --inline --progress --colors --config webpack.config.js",
-    "build:development": "NODE_ENV=development webpack --progress --colors --config webpack.config.production.js",
-    "build:staging": "NODE_ENV=production CONFIG=staging webpack --progress --colors --config webpack.config.production.js",
-    "build:production": "NODE_ENV=production webpack --progress --colors --config webpack.config.production.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@bitbucket.org:akohub-team/ako-admin.git"
+    "build:development": "NODE_ENV=development webpack --progress --colors --config webpack.config.production.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.1.0",
