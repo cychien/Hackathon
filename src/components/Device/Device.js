@@ -2,10 +2,10 @@ import React from 'react'
 import ReactTooltip from 'react-tooltip'
 import './style.css'
 
-const Device = ({ id, deviceName, did }) => {
+const Device = ({ id, deviceName, did, selectArea, areaId }) => {
   return (
-    <div>
-      <div styleName="device" data-tip data-for={did} />
+    <div onClick={() => selectArea(did)} >
+      <div styleName="device" data-tip data-for={did} style={{backgroundColor: areaId === did ? 'black' : 'white'}}/>
       <ReactTooltip id={did} type='dark' effect='solid'>
         <span>{deviceName}</span>
       </ReactTooltip>

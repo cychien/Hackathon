@@ -5,7 +5,7 @@ import Filter from './Filter';
 import 'react-dates/initialize'
 import './style.css'
 
-const MainScreen = ({ selectedTime, switchSelectedTime }) => {
+const MainScreen = ({ selectedTime, switchSelectedTime, main }) => {
   return (
     <div className='container'>
       <div className='row'>
@@ -60,7 +60,7 @@ const MainScreen = ({ selectedTime, switchSelectedTime }) => {
               />
             </div>
           </div>
-          <LineChart />
+          <LineChart main={main} />
         </div>
       </div>
     </div>
