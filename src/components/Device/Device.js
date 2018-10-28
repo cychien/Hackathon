@@ -4,7 +4,12 @@ import './style.css'
 
 const Device = ({ id, deviceName, did, selectArea, areaId, active }) => {
   return (
-    <div onClick={() => selectArea(did)} >
+    <div 
+    //style={{backgroundColor: `var(--pmlevel${level})`}}
+    onClick={e => {
+      selectArea(did)
+      e.stopPropagation()
+    }}>
       <div 
         styleName="device" 
         data-tip data-for={did} 

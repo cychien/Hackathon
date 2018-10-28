@@ -1,6 +1,8 @@
 import React from 'react'
 import Paper from 'components/Paper'
 import { Line } from 'react-chartjs-2'
+import device from 'constants/device'
+import './style.css'
 
 const options = {
   scales: {
@@ -113,9 +115,17 @@ const LineChart = ({main}) => {
     ]
   }
 
+  let roomName = ''
+  for (var key in device) {
+    if (device.hasOwnProperty(key)) { 
+      let value = device[key]
+      if (value === main.areaId) roomName = key
+    }
+  }
+
   return (
     <Paper>
-      <label>Overview</label>
+      <label><span styleName='roomName'>{`${roomName}`}</span> <span className='text-secondary'>Overview</span></label>
       <Line data={data} options={options} />
     </Paper>
   )

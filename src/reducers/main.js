@@ -1,5 +1,7 @@
 import { handleActions } from 'redux-actions'
 import moment from 'moment'
+import convert from 'constants/convert'
+import _ from 'lodash'
 
 export const initState = {
   areaId: '3871759586433975',
@@ -17,10 +19,69 @@ export const initState = {
   errors: [],
   queryWay: 'live',
   startTime: moment().subtract(1, 'days').toISOString(),
-  endTime: moment().toISOString()
+  endTime: moment().toISOString(),
+  startHour: '00',
+  startMin: '00',
+  endHour: '00',
+  endMin: '00',
+
+  outData: 0,
+  oneData: {}
 }
 
 export default handleActions({
+  GET_ONE_DATA_REQUEST (state, action) {
+    return {
+     ...state
+    }
+  },
+  GET_ONE_DATA_RECEIVE (state, action) {
+    let aaa = {[action._pointer]: action.payload[0]}
+    const level = convert(aaa[action._pointer].value)
+    aaa[action._pointer].level = level
+    return {
+      ...state ,
+      oneData: {...state.oneData, ...aaa}
+     }
+  },
+  GET_ONE_DATA_FAILURE (state, action) {
+    return {
+      ...state 
+     }
+  },
+  GET_OUT_DATA_REQUEST (state, action) {
+    return {
+      ...state,
+      outData: {}
+    }
+  },
+  GET_OUT_DATA_RECEIVE (state, action) {
+    return {
+      ...state,
+      outData: action.payload
+    }
+  },
+  GET_OUT_DATA_FAILURE (state, action) {
+    return {
+      ...state
+    }
+  },
+  SET_START (state, action) {
+    const time = action.payload.split(':')
+    return {
+      ...state,
+      startHour: time[0],
+      startMin: time[1]
+    }
+  },
+  SET_END (state, action) {
+    const time = action.payload.split(':')
+    return {
+      ...state,
+      endHour: time[0],
+      endMin: time[1]
+    }
+  },  
   SELECT_AREA (state, action) {
     return {
       ...state,

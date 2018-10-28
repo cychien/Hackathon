@@ -2,6 +2,7 @@ import React from 'react'
 import LiveDataBlock from 'components/LiveDataBlock'
 import LineChart from 'components/LineChart'
 import Filter from './Filter';
+import Paper from 'components/Paper'
 import 'react-dates/initialize'
 import './style.css'
 

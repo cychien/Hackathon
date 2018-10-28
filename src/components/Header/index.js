@@ -11,7 +11,7 @@ const Header = ({ text }) => (
       </Link>
       <ul className='navbar-nav d-flex flex-row'>
         <li className='nav-item'>
-          <Link className='nav-link pt-2 mx-3' styleName="link" to='/'>Home</Link>
+          <Link className='nav-link pt-2 mx-3' styleName="link" to='/'>Dashboard</Link>
         </li>
         <li className='nav-item'>
           <Link className='nav-link pt-2 mx-3' styleName="link" to='/prediction'>Prediction</Link>

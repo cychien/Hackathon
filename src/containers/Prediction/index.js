@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import PredictionScreen from 'components/PredictionScreen'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+import * as mainActions from 'actions/main'
 
 class Prediction extends Component {
   constructor(props) {
@@ -7,6 +11,11 @@ class Prediction extends Component {
     this.state = {
       type: 'plusPeople'
     }
+  }
+
+  componentWillMount () {
+    const {mainActions} = this.props
+    // mainActions.getAllData()
   }
 
   switchType = (type) => {
@@ -27,4 +36,19 @@ class Prediction extends Component {
   }
 }
 
-export default Prediction
+function mapStateToProps (state) {
+  return {
+    main: state.main
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    mainActions: bindActionCreators(mainActions, dispatch)
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Prediction)

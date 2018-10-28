@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import MainScreen from 'components/MainScreen'
+import moment from 'moment'
 import './style.css'
 
 import * as mainActions from 'actions/main'
@@ -27,6 +28,8 @@ class Home extends Component {
 
   componentDidMount () {
     const {mainActions, main} = this.props
+    //mainActions.getAllData()
+    //mainActions.getOutData({sd: moment().subtract(1, 'h').toISOString(), ed: moment().toISOString()})
     if (main.queryWay === 'live') {
       mainActions.getData(main.areaId)
       this.timer = setInterval(
