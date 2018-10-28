@@ -16,7 +16,6 @@ const options = {
 const LineChart = ({main}) => {
   const {pm25Arr, humidityArr, tempArr, filterArr} = main
   const data = {
-    // labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
         label: 'PM2.5 (%)',
