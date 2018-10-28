@@ -19,7 +19,11 @@ a:hover
 }
 
 .link:hover {
-  color: black;
+  color: var(--primary);
+}
+
+.active {
+  color: var(--primary);
 }
 
 .brand img{

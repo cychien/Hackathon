@@ -6,7 +6,7 @@
   cursor: pointer;
 }
 
-.device:hover {
-  background-color: black;
-  border-color: black;
+.device:hover, .active {
+  background-color: var(--primary);
+  border-color: var(--primary);
 }

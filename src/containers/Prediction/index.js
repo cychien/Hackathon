@@ -9,7 +9,7 @@ class Prediction extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      type: 'plusPeople'
+      type: 'normal'
     }
   }
 

@@ -1,7 +1,7 @@
 :root {
   --pmlevel1: #D9EAC7;
   --pmlevel2: #A8D398;
-  --pmlevel3: #EBF7F5;
+  --pmlevel3: #8EC786;
   --pmlevel4: #FEF301;
   --pmlevel5: #F7AB05;
   --pmlevel6: #EF6D01;
@@ -9,4 +9,22 @@
   --pmlevel8: #EE6D82;
   --pmlevel9: #E70458;
   --pmlevel10: #E70012;
+}
+
+.legend {
+  width: 300px;
+  height: 20px;
+  background-image: linear-gradient(
+    to right,
+    var(--pmlevel1),
+    var(--pmlevel2),
+    var(--pmlevel3),
+    var(--pmlevel4),
+    var(--pmlevel5),
+    var(--pmlevel6),
+    var(--pmlevel7),
+    var(--pmlevel8),
+    var(--pmlevel9),
+    var(--pmlevel10)
+  );
 }
