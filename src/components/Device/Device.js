@@ -5,7 +5,7 @@ import './style.css'
 
 const Device = ({ id, deviceName, did, selectArea, areaId, active }) => {
   const deviceStyle = cx('device', {'active': active && (areaId === did)})
-  const color = `var(--pmlevel${Math.floor(Math.random()*5)+1})`
+  const color = `var(--pmlevel${Math.floor(Math.random()*4)+1})`
   return (
     <div 
     //style={{backgroundColor: `var(--pmlevel${level})`}}

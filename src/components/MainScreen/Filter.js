@@ -120,7 +120,7 @@ const Filter = ({ selectedTime, switchSelectedTime, mainActions, main, focus, se
             </div>
           </div>
       )}
-      <div className="mt-4">
+      <div className="mt-3">
         <Building floorActive />
       </div>
     </div>
